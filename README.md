@@ -1,0 +1,1 @@
+# touch-type-dic-generator
