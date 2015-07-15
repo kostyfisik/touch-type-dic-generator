@@ -11,14 +11,14 @@ Words that use only 8 home row keys
 
 Words that use 12 keys graded with Workman from 1, 1.5, and 2
 
-## step 3
+## step 2
 
 Home and up rows.
 
-## step 4
+## step 3
 
 Home and down rows.
 
-## step 5
+## step 4
 
 All lowercase letters
