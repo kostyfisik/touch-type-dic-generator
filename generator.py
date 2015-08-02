@@ -18,31 +18,38 @@
 import string
 import random
 letters = set(string.ascii_letters)
+exclude=set("'- :")
+letters = letters.union(exclude)
 workman_step0 = set('ashtneoi')
-workman_step1 = set('ashtneoidrclup')
+new_step0 = set('ashtneoi')
+workman_step1 = set('ashtneoidrclup')  # basic letters
+new_step1 = workman_step1-workman_step0
 workman_step2 = set('ashtgyneoiqdrwbjfup')
+new_step2 = workman_step2 - workman_step1
 workman_step3 = set('ashtgyneoizxmcvkl')
+new_step3 = workman_step3 - workman_step1
 workman_step4 = set(set(string.ascii_lowercase))
+new_step4 = workman_step4
 step0 = letters - workman_step0
 step1 = letters - workman_step1
 step2 = letters - workman_step2
 step3 = letters - workman_step3
 step4 = letters - workman_step4
-exclude=set("'- :")
-step = [step0.union(exclude),
-        step1.union(exclude),
-        step2.union(exclude),
-        step3.union(exclude),
-        step4.union(exclude)]
+step = [step0, step1, step2, step3, step4]
+new = [new_step0, new_step1, new_step2, new_step3, new_step4]
 count = 0
 for i in xrange(5):
     with open("workman_step%i.dic"%i,'w') as file_:
         with open("en_US.dic") as f:
             for line in f:
                 if not any((c in step[i]) for c in line):
-                    count = count + 1
                     if len(line)>1:
-                        file_.write(line)
+                        for new_letter in new[i]:
+                            #if True:
+                            if new_letter in line:
+                                count = count + 1
+                                file_.write(line)
+                                break
     print(count)
     with open("workman_step%i.dic"%i,'r') as source:
         data = [ (random.random(), line) for line in source ]
