@@ -1,3 +1,6 @@
+Workman layout: (relatively) widespread, human friendly, not extemely fast
+http://www.sacrideo.us/experience-report-with-the-workman-keyboard-layout/
+
 # touch-type-dic-generator
 
 A set of dictionaries to learn Workman keyboard layout with the script
